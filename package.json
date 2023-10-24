@@ -1,13 +1,34 @@
 {
-  "name": "alt-text-ai",
+  "name": "datocms-plugin-alt-text-ai",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://github.com/marcelofinamorvieira/datocms-plugin-alt-text-ai",
+  "description": "A plugin that creates daily and weekly backups of your main environment on DatoCMS automatically.",
+  "keywords": [
+    "datocms",
+    "datocms-plugin",
+    "ai",
+    "alt",
+    "media",
+    "assets"
+  ],
+  "datoCmsPlugin": {
+    "title": "Alt Text AI",
+    "previewImage": "docs/demo.mp4",
+    "coverImage": "docs/cover.png",
+    "entryPoint": "build/index.html",
+    "permissions": [
+      "currentUserAccessToken"
+    ]
+  },
   "dependencies": {
+    "@datocms/cma-client-browser": "^2.2.6",
     "@types/node": "^18.18.6",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "datocms-plugin-sdk": "^1.0.0",
     "datocms-react-ui": "^1.0.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -38,12 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.200",
     "cross-env": "^7.0.3"
-  },
-  "datoCmsPlugin": {
-    "title": "",
-    "previewImage": "",
-    "coverImage": "",
-    "entryPoint": "build/index.html"
   }
 }
