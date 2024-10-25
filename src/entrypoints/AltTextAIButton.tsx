@@ -8,7 +8,6 @@ import { useState } from 'react';
 type PropTypes = {
   ctx: RenderFieldExtensionCtx;
 };
-
 async function fetchAlt(
   apiKey: string,
   client: Client,
