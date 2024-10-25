@@ -16,13 +16,13 @@ async function fetchAlt(
   const { url } = await client.uploads.find(asset.upload_id);
 
   const result = await (
-    await fetch('https://alttext.ai/api/v1/images', {
+    await fetch('https://alttextgeneratorai.com/api/dato', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-API-Key': apiKey ?? '',
       },
       body: JSON.stringify({
+        apiKey,  // Pass the API key in the body
         image: {
           url,
         },
