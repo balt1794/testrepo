@@ -27,19 +27,22 @@ async function fetchAlt(
       }),
     });
 
-    // Check if the response is okay before parsing
+    // Check if the response status is OK (200-299 range)
     if (!response.ok) {
-      console.error(`Server returned status: ${response.status} - ${response.statusText}`);
-      console.log("Response body:", await response.text()); // Log response for debugging
-      throw new Error("Failed to fetch alt text");
+      console.error(`Server returned error: ${response.status} - ${response.statusText}`);
+      // Log the response text for debugging
+      const errorText = await response.text();
+      console.error("Response text:", errorText);
+      throw new Error("API request failed");
     }
 
-    // Attempt to parse JSON response
+    // Attempt to parse the response as JSON
     const data = await response.json();
     return data;
 
   } catch (error) {
-    console.error("Error fetching alt text:", error);
+    console.error("Error in fetchAlt function:", error);
+    // Return an object with a default error message for alt text
     return { alt_text: "Error generating alt text" };
   }
 }
