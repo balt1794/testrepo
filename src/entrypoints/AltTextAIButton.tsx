@@ -38,8 +38,12 @@ async function fetchAlt(
 
     // Attempt to parse the response as JSON
     const data = await response.json();
-    console.log(data)
-    return data;
+     // Parse the response as JSON only once
+
+     console.log("Parsed response data:", data); // Check what is returned
+ 
+     // Directly access alt_text from the response
+     return data.alt_text || "Error generating alt text";
 
   } catch (error) {
     console.error("Error in fetchAlt function:", error);
