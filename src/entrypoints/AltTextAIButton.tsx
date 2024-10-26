@@ -15,23 +15,35 @@ async function fetchAlt(
 ) {
   const { url } = await client.uploads.find(asset.upload_id);
 
-  const result = await (
-    await fetch('https://alttextgeneratorai.com/api/dato', {
+  try {
+    const response = await fetch('https://alttextgeneratorai.com/api/dato', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        apiKey,  // Pass the API key in the body
-        image: {
-          url,
-        },
+        apiKey,
+        image: { url },
       }),
-    })
-  ).json();
+    });
 
-  return result;
+    // Check if the response is okay before parsing
+    if (!response.ok) {
+      console.error(`Server returned status: ${response.status} - ${response.statusText}`);
+      console.log("Response body:", await response.text()); // Log response for debugging
+      throw new Error("Failed to fetch alt text");
+    }
+
+    // Attempt to parse JSON response
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error("Error fetching alt text:", error);
+    return { alt_text: "Error generating alt text" };
+  }
 }
+
 
 async function generateAlts(
   currentFieldValue: unknown,
