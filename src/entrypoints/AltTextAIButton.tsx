@@ -84,7 +84,7 @@ async function generateAlts(
         assetValue
       );
 
-      assetValue.alt = result.alt_text;
+      assetValue.alt = result;
       ctx.setFieldValue(ctx.fieldPath, assetValue);
     }
   } catch (error) {
