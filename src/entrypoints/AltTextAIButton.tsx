@@ -38,6 +38,7 @@ async function fetchAlt(
 
     // Attempt to parse the response as JSON
     const data = await response.json();
+    console.log(data)
     return data;
 
   } catch (error) {
