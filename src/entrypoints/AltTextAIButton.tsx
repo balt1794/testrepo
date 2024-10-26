@@ -21,7 +21,6 @@ async function fetchAlt(
       headers: {
         'Content-Type': 'application/json',
       },
-      mode: 'no-cors',
       body: JSON.stringify({
         apiKey,  // Pass the API key in the body
         image: {
