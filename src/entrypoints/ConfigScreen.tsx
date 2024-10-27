@@ -42,14 +42,14 @@ export default function ConfigScreen({ ctx }: Props) {
           required
           name="altTextAPIKey"
           id="altTextAPIKey"
-          label="Alt Text API Key"
+          label="AltTextGeneratorAI API Key"
           value={apiKey}
           onChange={(newValue) => setApiKey(newValue)}
         />
         <p>
           You can get your API key by going to{' '}
-          <a href="https://alttext.ai/account/api_keys" target="_blank">
-            https://alttext.ai/account/api_keys
+          <a href="https://alttextgeneratorai.com" target="_blank">
+          https://alttextgeneratorai.com
           </a>
         </p>
       </div>

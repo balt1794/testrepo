@@ -13,7 +13,7 @@
     "assets"
   ],
   "datoCmsPlugin": {
-    "title": "Alt Text AI",
+    "title": "AltTextGeneratorAI",
     "previewImage": "docs/demo.mp4",
     "coverImage": "docs/cover.png",
     "entryPoint": "build/index.html",
