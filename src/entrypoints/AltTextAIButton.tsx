@@ -60,7 +60,7 @@ async function generateAlts(
 ) {
   setIsLoading(true);
   try {
-    const client = buildClient({  apiToken: process.env.NEXT_PUBLIC_DATO_API_TOKEN || '' });
+    const client = buildClient({  apiToken: "749c5604a57eada561c5a436cc37ab" || '' });
     const isGallery = isArray(currentFieldValue);
     if (isGallery) {
       const newAssets = [];
